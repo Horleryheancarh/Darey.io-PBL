@@ -11,7 +11,7 @@
 
 ### Connect to the EC2 instance
 
-![Connect to EC2 Instance](PBL-1/)
+![Connect to EC2 Instance](PBL-1/EC2c.png)
 
 ## STEP 1
 
