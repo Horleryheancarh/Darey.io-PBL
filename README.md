@@ -13,4 +13,17 @@ Implementing LEMP(Linux, Nginx, MySQL and PHP) stack on AWS EC2 instance
 Implementing MERN(MongoDB, ExpressJS, ReactJS and NodeJS) stack on AWS EC2 instance
 
 
+### Project 4
+Implementing MEAN(MongoDB, ExpressJS, AngularJS and NodeJS) stack on AWS EC2 instance
+
+
+### Project 5
+CLIENT-SERVER ARCHITECTURE WITH MYSQL
+
+
+### Project 6
+Web Solution With Wordpress
+
+
+
 #### Credits https://darey.io/
