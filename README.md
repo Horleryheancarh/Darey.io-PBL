@@ -25,5 +25,8 @@ CLIENT-SERVER ARCHITECTURE WITH MYSQL
 Web Solution With Wordpress
 
 
+### Project 7
+Devops Tooling Website Solution
+
 
 #### Credits https://darey.io/
