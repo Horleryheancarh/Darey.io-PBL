@@ -18,7 +18,7 @@ Implementing MEAN(MongoDB, ExpressJS, AngularJS and NodeJS) stack on AWS EC2 ins
 
 
 ### Project 5
-CLIENT-SERVER ARCHITECTURE WITH MYSQL
+CLIENT-SERVER Architecture With MySQL
 
 
 ### Project 6
@@ -31,6 +31,10 @@ Devops Tooling Website Solution
 
 ### Project 8
 Load Balancer Solution With Apache
+
+
+### Project 9
+Continous Integration Pipeline
 
 
 #### Credits https://darey.io/
