@@ -113,6 +113,8 @@ sudo vi /etc/sysconfig/selinux
 # Edit DB details
 sudo vi /var/www/html/functions.php
 
+# Install MySQL
+
 # Populate db
 mysql -h <database-private-ip> -u webaccess -p < tooling-db.sql
 
