@@ -25,7 +25,7 @@ sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sou
 
 sudo apt update
 
-sudo apt-get install jenkins
+sudo apt install jenkins
 
 # Verify Jenkins is running
 sudo systemctl status jenkins
