@@ -99,11 +99,11 @@ sudo setsebool -P httpd_execmem 1
 
 #### Clone Git hub Repo And Set Up The Website
 ```bash
-git clone https://github.com/Horleryheancarh.git
+git clone https://github.com/Horleryheancarh/tooling.git
 
 cd tooling
 
-sudo cp html/. /var/www/html
+sudo cp -R html/. /var/www/html
 
 # Disable SELinux
 sudo setenforce 0
