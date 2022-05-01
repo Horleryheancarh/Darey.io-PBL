@@ -37,4 +37,8 @@ Load Balancer Solution With Apache
 Continous Integration Pipeline
 
 
+### Project 10
+Load Balancer Solution With Nginx
+
+
 #### Credits https://darey.io/
