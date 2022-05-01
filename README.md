@@ -41,4 +41,8 @@ Continous Integration Pipeline
 Load Balancer Solution With Nginx
 
 
+### Project 11
+Automate Project 7 to 10
+
+
 #### Credits https://darey.io/
