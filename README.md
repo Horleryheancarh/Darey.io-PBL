@@ -45,4 +45,8 @@ Load Balancer Solution With Nginx
 Automate Project 7 to 10
 
 
+### Project 12
+Ansible Refactoring And Satic Assignments
+
+
 #### Credits https://darey.io/
