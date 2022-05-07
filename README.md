@@ -49,4 +49,9 @@ Automate Project 7 to 10
 Ansible Refactoring And Satic Assignments
 
 
+### Project 13
+Ansible Dynamic Assignments (include) and Community Roles
+
+
+
 #### Credits https://darey.io/

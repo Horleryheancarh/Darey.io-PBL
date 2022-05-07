@@ -63,7 +63,7 @@
 ```
 
 #### Contents of config file
-```json
+```yml
 	#/etc/nginx/sites-available/projectlemp
 
 	server {
