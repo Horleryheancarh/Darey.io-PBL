@@ -53,5 +53,8 @@ Ansible Refactoring And Satic Assignments
 Ansible Dynamic Assignments (include) and Community Roles
 
 
+### Project 14
+Experience Continuous Integration With Jenkins, Ansible, Artifactory, Sonarqube and PHP
+
 
 #### Credits https://darey.io/

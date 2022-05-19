@@ -184,14 +184,14 @@ sudo yum module reset php -y
 
 sudo yum module enable php:remi-7.4 -y
 
-sudo yum install -y php  php-common php-mbstring php-opcache php-intl php-xml php-gd php-curl php-mysqlnd    php-fpm php-json
+sudo yum install -y php  php-common php-mbstring php-opcache php-intl php-xml php-gd php-curl php-mysqlnd php-fpm php-json
 
 sudo systemctl start php-fpm
 
 sudo systemctl enable php-fpm
 
 # Install Composer
-curl -sS https://getcomposer.org/installer | php 
+curl -sS https://getcomposer.org/installer | php
 
 sudo mv composer.phar /usr/bin/composer
 
@@ -338,6 +338,10 @@ stage ('Upload Artifact to Artifactory') {
 
 ![ArtJenkins](PBL-14/artjen.png)
 
+ - Create database and user for Artifactory
+
+![ArtDB](PBL-14/artdb.png)
+
  - Run the playbook
 
 ![ArtPlay](PBL-14/artplay.png)
@@ -345,11 +349,130 @@ stage ('Upload Artifact to Artifactory') {
 
 ## Sonarqube Setup
 
-## Configure Sonarqube
+ - Installing SonarQube with an ansible role
+```yml
+---
+# tasks file for sonarqube
+- name: set max_map
+  become: true
+  command: sysctl -w vm.max_map_count=262144
 
-## Configure Sonarqube and Jenkins for Quality Gate
+- name: set file max
+  become: true
+  command: sysctl -w fs.file-max=65536
+
+- name: Add max limits
+  lineinfile:
+    path: /etc/security/limits.conf
+    line: 
+      - sonarqube   -   nofile   65536
+      - sonarqube   -   nproc    4096
+    create: yes
+
+- name: Add ppa  repository 
+  apt_repository:
+    repo: ppa:linuxuprising/java
+
+- name: install python3
+  apt:
+    name: 
+      - python3
+      - python3-pip
+      - python3-dev
+      - libpq-dev
+    state: present
+
+- name: Install setuptools
+  pip:
+    name: setuptools
+    extra_args: --upgrade
+
+- name: upgrade pip command
+  pip:
+    name: pip
+    extra_args: --upgrade
+
+- name: install pip dependencies
+  pip:
+    name:  psycopg2
+    executable: pip3
+
+- name: install java 11
+  apt:
+    name: 
+      - openjdk-11-jdk
+      - openjdk-11-jre
+    state: present
+    allow_unauthenticated: yes
+
+- import_tasks: postgresql.yml
+
+- name: Ensure group sonar exists
+  group:
+    name: sonar
+    state: present
+
+- import_tasks: sonarqube-setup.yml
+
+- name: start and enable sonarqube
+  service:
+    name: sonar
+    state: started
+    enabled: yes
+```
+![SonarInst](PBL-14/sonarinst.png)
+
+ - Install Sonarqube plugin on Jenkins
+
+![SonarJenkins](PBL-14/sonarscan.png)
+
+ - Configure Sonarqube on Jenkins
+
+![SonarJenkins](PBL-14/sonarjenkins.png)
+
+ - Add stage in Jenkinsfile for Sonar Quality Gate
+```groovy
+stage('SonarQube Quality Gate') {
+	when { branch pattern: "^develop*|^hotfix*|^release*|^main*", comparator: "REGEXP" }
+		environment {
+			scannerHome = tool 'SonarQubeScanner'
+		}
+		steps {
+			withSonarQubeEnv('sonarqube') {
+				sh "${scannerHome}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+			}
+			timeout(time: 1, unit: 'MINUTES') {
+				waitForQualityGate abortPipeline: true
+			}
+		}
+}
+```
+
+ - Run playbook to test Sonarqube
+
+![SonarRun](PBL-14/sonarrun.png)
+
+![SonarTest](PBL-14/sonartest.png)
+
 
 ## Tasks
+
+ - Create two EC2 instances to serve as Jenkins Slaves (NODES)
+
+![Agents](PBL-14/agents.png)
+
+ - Configure webhook between Jenkins and Github
+
+
+
+ - Deploy the application to all eenvironment
+
+
+
+ <!-- - Experience Pentesting -->
+
+
+
 
 
 
