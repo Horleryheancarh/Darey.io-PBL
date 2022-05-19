@@ -57,4 +57,4 @@ Ansible Dynamic Assignments (include) and Community Roles
 Experience Continuous Integration With Jenkins, Ansible, Artifactory, Sonarqube and PHP
 
 
-#### Credits https://darey.io/
+#### Credits [Darey.IO](https://darey.io/)
