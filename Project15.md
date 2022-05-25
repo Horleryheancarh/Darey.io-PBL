@@ -20,7 +20,7 @@
 
 - Create an Internet Gateway and associate it with the public subnet
 
-![architecture](PBL-15/arch.png)
+![architecture](PBL-15/igw.png)
 
 - Create a NAT gateway
 
