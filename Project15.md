@@ -16,7 +16,7 @@
 
 - Create Routing table for the private and public subnets
 
-![targetgroups](PBL-15/targetg.png)
+![routingtable](PBL-15/rtb.png)
 
 - Create an Internet Gateway and associate it with the public subnet
 
@@ -76,6 +76,10 @@ vi /etc/httpd/conf.d/ssl.conf
 - Create AMIs from the instances
 
 ![AMI](PBL-15/amis.png)
+
+- Create Target groups
+
+![targetgroups](PBL-15/targetg.png)
 
 - Create Certificate using the Amazon Certificate Manager
 
