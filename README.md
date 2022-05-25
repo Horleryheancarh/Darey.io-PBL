@@ -57,4 +57,8 @@ Ansible Dynamic Assignments (include) and Community Roles
 Experience Continuous Integration With Jenkins, Ansible, Artifactory, Sonarqube and PHP
 
 
+### Project 15
+AWS Cloud Solution For 2 Company Websites Using A Reverse Proxy Technology
+
+
 #### Credits [Darey.IO](https://darey.io/)
