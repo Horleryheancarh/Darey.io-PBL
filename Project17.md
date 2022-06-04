@@ -1273,11 +1273,29 @@ resource "aws_db_instance" "yheancarh_rds_instance" {
 ---
 
 1. Networking Concepts
-   - IP address
-   - Subnets
-   - CIDR Notation
-   - IP Routing
-   - Internet Gateways
-   - NAT
-2. OSI Model and TCP/IP suite
-3. Difference between ```assume role policy``` and ```role policy```
+   - IP address --> IP address stands for Internet Protocol address and its a means of identify a device/host on a computer network.
+   - Subnets ---> Subnets is a small network within a larger network for example a department within an organization usually on the same wireless router or network switch.
+   - CIDR Notation ---> CIDR notation was developed as a method to manage the available IP addresses by creating multiple classes out of the default classes (A, B, C, D and E) that were predefined at the initial conception of the IP addresses
+   - IP Routing ---> this is the process of send packets(information of data) from one device/host to another device/host on a network 
+   - Internet Gateways ---> is a device (host or router) that allows internet access to a local network
+   - NAT ---> is a method of allowing multiple hosts access the internet with a single public IP address
+2. OSI Model and TCP/IP suite 
+   - The OSI model is a universal set of rules and requirement governing the interoperability between different products and software. It consists of the following layers
+     - Physical Layer
+     - Data Link Layer
+     - Network Layer
+     - Transport Layer
+     - Session Layer
+     - Presentation Layer
+     - Application Layer
+   - TCP/IP suite is a data link protocol used on the internet to let devices send and receive data. It consists of the following layers
+     - Physical Layer
+     - Data link Layer
+     - Network Layer
+     - Transport Layer
+     - Application Layer
+  
+
+3. Difference between ```assume role policy``` and ```role policy``` 
+   - Assume Role Policy simply means gaining the permissons assigned to a role policy by becoming the role
+   - Role Policy is an IAM identity that has specific permissions
