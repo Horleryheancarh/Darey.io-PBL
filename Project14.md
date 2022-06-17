@@ -465,7 +465,7 @@ stage('SonarQube Quality Gate') {
 
 ![Webhook](PBL-14/webhook.png)
 
- - Deploy the application to all eenvironment
+ - Deploy the application to all environment
 
 
  <!-- - Experience Pentesting -->
