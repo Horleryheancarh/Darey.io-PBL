@@ -76,5 +76,7 @@ Automate Infrastructure With IaC Using Terraform Part 3
 ### Project 19
 Automate Infrastructure With IaC Using Terraform Part 4
 
+### Project 20
+Migration To The Сloud With Contanerization. Part 1 – docker And docker-compose
 
 #### Credits [Darey.IO](https://darey.io/)
