@@ -40,7 +40,7 @@ sudo mv cfssl cfssljson /usr/local/bin/
 - kubelet
 - kube-proxy
 
-## Distrbute the certificates to the instances
+## Distrbute the certificates to the respective instances
 ## Create Kubernetes Configuration files using kubectl
 ## Setup encryption using etcd
 ## Bootsrap the control plane
