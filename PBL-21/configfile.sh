@@ -933,6 +933,10 @@ EOF
 
 sudo mv 172-20-bridge.conf 99-loopback.conf /etc/cni/net.d/
 
+NAME=k8s-cluster-from-ground-up
+WORKER_NAME=${NAME}-$(curl -s http://169.254.169.254/latest/user-data/ | tr "|" "\n" | grep "^name" | cut -d"=" -f2)
+echo "${WORKER_NAME}"
+
 # Move certificates and kubeconfig files to their respective dir
 sudo mv ${WORKER_NAME}-key.pem ${WORKER_NAME}.pem /var/lib/kubelet/
 sudo mv ${WORKER_NAME}.kubeconfig /var/lib/kubelet/kubeconfig
@@ -940,11 +944,6 @@ sudo mv kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 sudo mv ca.pem /var/lib/kubernetes/
 
 # Create kubelet-config.yaml
-
-NAME=k8s-cluster-from-ground-up
-WORKER_NAME=${NAME}-$(curl -s http://169.254.169.254/latest/user-data/ | tr "|" "\n" | grep "^name" | cut -d"=" -f2)
-echo "${WORKER_NAME}"
-
 cat <<EOF | sudo tee /var/lib/kubelet/kubelet-config.yaml
 kind: KubeletConfiguration
 apiVersion: kubelet.config.k8s.io/v1beta1
@@ -959,7 +958,7 @@ authorization:
   mode: Webhook
 clusterDomain: "cluster.local"
 clusterDNS:
-  - "10.32.0.10"
+  - "172.31.1.12"
 resolvConf: "/etc/resolv.conf"
 runtimeRequestTimeout: "15m"
 tlsCertFile: "/var/lib/kubelet/${WORKER_NAME}.pem"
@@ -1021,5 +1020,13 @@ EOF
   sudo systemctl start containerd kubelet kube-proxy
 }
 
+kubectl get nodes --kubeconfig admin.kubeconfig -o wide
 
 
+
+172.31.0.10 ip-172-31-0-10
+172.31.0.11 ip-172-31-0-11
+172.31.0.12 ip-172-31-0-12
+172.31.0.20 ip-172-31-0-20
+172.31.0.21 ip-172-31-0-21
+172.31.0.22 ip-172-31-0-22
